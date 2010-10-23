@@ -4,7 +4,7 @@
     require_once("includes/common.php"); 
 
     // log out current user (if any)
-    logout();
+//    logout();
 
 ?>
 
@@ -16,20 +16,28 @@
 
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <title>C$50 Finance: Log Out</title>
+    <title>Never Have I Ever...HARVARD: Log Out</title>
   </head>
 
   <body>
+
+    <?
+	include("includes/header.php");
+    ?>
 
     <div align="center">
       <a href="index.php"><img alt="C$50 Finance" border="0" src="images/logo.gif" /></a>
     </div>
 
     <div align="center">
-      TTFN
+      Thank you!
       <br /><br />
-      or <a href="login.php">log in</a> again
+      <a href="login.php">Log in</a> again
     </div>
+
+    <?
+	include("includes/footer.php");
+    ?>
 
   </body>
 

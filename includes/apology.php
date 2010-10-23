@@ -6,17 +6,18 @@
 
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <title>C$50 Finance: Sorry!</title>
+    <title>Never Have I Ever...HARVARD: Sorry!</title>
   </head>
 
   <body>
 
     <div align="center">
-      <a href="index.php"><img alt="C$50 Finance" border="0" src="images/logo.gif" /></a>
+      <a href="index.php"><img alt="Never Have I Ever...HARVARD" border="0" src="images/logo.gif" /></a>
     </div>
 
     <div align="center">
-      <h1>Sorry!</h1>
+      <h1>We're sorry.</h1>
+      <p>An error has occurred</p>
     </div>
 
     <div align="center">
@@ -24,7 +25,7 @@
     </div>
 
     <div align="center" style="margin: 20px;">
-      <a href="javascript:history.go(-1);">Back</a>
+      <a href="javascript:history.go(-1);">Return</a>
     </div>
 
   </body>
