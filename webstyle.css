@@ -1,0 +1,165 @@
+body
+{
+	background-color: #EEEEFF;
+	margin: 0px;
+	padding: 0px;
+}
+
+div
+{
+	width: 900px;
+	background-color: #FFFFFF;
+}
+
+#heading
+{
+	font-size: 1em;
+	color: #000077;
+}
+
+#subheading
+{
+	font-size: 1.5em;
+	color: #000000;
+	font-style: italic;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+}
+
+#title
+{
+  font-size: 3em;
+}
+#subtitle
+{
+  font-size: 2em;
+}
+
+#toplinks
+{
+	background-color: #C20000;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+	height:40px;
+}
+#welcomemessage
+{
+  padding: 10px;
+}
+.toplink
+{
+	padding-width: 0px;
+}
+
+.main
+{
+	color: #000000;
+	text-align: center;
+	font-size: 3em;
+}
+
+.main2
+{
+	color: #000000;
+	text-align: center;
+	font-size: 1em;
+}
+#messagearea
+{
+  width: 170px;
+	height: 120px;
+	border: 5px;
+	padding: 5px;
+	border-color: #C20000;
+	border-style: solid;
+	resize: none;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+}
+.postdisplay
+{
+  width: 500px;
+	text-align: center;
+  border: 6px;
+	border-style: solid;
+	border-color: #C20000;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+	font-size: 1.2em;
+}
+#newpostbutton
+{
+  color: #000000;
+	background: transparent;
+	border-width: 3px;
+	border-color: #C20000;
+	border-style: solid;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+	font-size: 1em;
+}
+.responsebutton
+{
+  color: #000000;
+	background: transparent;
+	border-width: 3px;
+	border-color: #000000;
+	border-style: solid;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+	font-size: .8em;
+  width: 110px;
+}
+.posthorzpadding
+{
+  width: 100px;
+}
+.postvertpadding
+{
+  height: 30px;
+	width: 500px;
+}
+#rightcolumn
+{
+  color: #000000;
+	font-size: .8em;
+	font-style: bold;
+	font-family: "Arial", "Verdana", Sans-serif;
+}
+#footer
+{
+	color: #000000;
+	text-align: center;
+	font-size: .6em;
+}
+#footerlink
+{
+	color: #0000FF;
+	text-decoration: underline;
+}
+.dividingline
+{
+	color: #DDDDEE;
+	background-color: #DDDDEE;
+	width: 96%;
+}
+
+#spacing
+{
+	font-size: 1em;
+}
+
+a:link 
+{ 
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited 
+{ 
+	color: #FFFFFF;
+	text-decoration: none;
+}
