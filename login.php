@@ -21,6 +21,10 @@
 
   <body>
 
+	<?
+		include("includes/header.php");
+	?>
+
     <div align="center">
       <a href="index.php"><img alt="C$50 Finance" border="0" src="images/logo.gif" /></a>
     </div>
@@ -45,6 +49,10 @@
         </div>
       </form>
     </div>
+
+	<?
+		include("includes/footer.php");
+	?>
 
   </body>
 

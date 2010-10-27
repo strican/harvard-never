@@ -23,13 +23,13 @@
     require_once("constants.php");
     require_once("helpers.php");
 
-    // require authentication for most pages
-    if (!preg_match("/(:?log(:?in|out)|register)\d*\.php$/", $_SERVER["PHP_SELF"]))
+
+/*    if (!preg_match("/(:?log(:?in|out)|register)\d*\.php$/", $_SERVER["PHP_SELF"]))
     {
         if (!isset($_SESSION["uid"]))
             redirect("login.php");
     }
-
+*/
     // ensure database's name, username, and password are defined
     if (DB_NAME == "") apologize("You left DB_NAME blank.");
     if (DB_USER == "") apologize("You left DB_USER blank.");
@@ -44,5 +44,5 @@
     // select database
     if (@mysql_select_db(DB_NAME, $connection) === FALSE)
         apologize("Could not select database (" . DB_NAME . ").");
-
+	
 ?>
