@@ -4,7 +4,7 @@
     require_once("includes/common.php"); 
 
     // log out current user (if any)
-//    logout();
+    logout();
 
 ?>
 
@@ -22,7 +22,7 @@
   <body>
 
     <?
-	include("includes/header.php");
+		include("includes/header.php");
     ?>
 
     <div align="center">
@@ -36,7 +36,7 @@
     </div>
 
     <?
-	include("includes/footer.php");
+		include("includes/footer.php");
     ?>
 
   </body>

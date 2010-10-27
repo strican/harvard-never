@@ -76,50 +76,6 @@
 
 
     /*
-     * stock
-     * lookup($symbol)
-     *
-     * Returns a stock by symbol (case-insensitively) else NULL if not found.
-     *
-     * Relies on Microsoft for articles and Yahoo for everything else.
-     */
-
-    function lookup($symbol)
-    {
-        // open connection to Yahoo
-        if (($fp = @fopen(YAHOO . $symbol, "r")) === FALSE)
-            return NULL;
-
-        // download first line of CSV file
-        if (($data = fgetcsv($fp)) === FALSE || count($data) == 1)
-            return NULL;
-
-        // close connection to Yahoo
-        fclose($fp);
-
-        // ensure symbol was found
-        if ($data[2] == 0.00)
-            return NULL;
-
-        // instantiate a stock object
-        $stock = new stock();
-
-        // remember stock's symbol and trades
-        $stock->symbol = $data[0];
-        $stock->name = $data[1];
-        $stock->price = $data[2];
-        $stock->time = strtotime($data[3] . " " . $data[4]);
-        $stock->change = $data[5];
-        $stock->open = $data[6];
-        $stock->high = $data[7];
-        $stock->low = $data[8];
-
-        // return stock
-        return $stock;
-    }
-
-
-    /*
      * void
      * redirect($destination)
      * 
@@ -157,4 +113,3 @@
     }
 
 ?>
-

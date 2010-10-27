@@ -36,14 +36,13 @@
     if (DB_PASS == "") apologize("You left DB_PASS blank.");
 
     // connect to database server
-    if (($connection = @mysql_connect(DB_SERVER, DB_USER, DB_PASS)) === FALSE)
+    if (($connection = @mysql_connect(DB_SERVER, DB_USER, DB_PASS)) === FALSE || ($mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME)) == FALSE)
         apologize("Could not connect to database server (" . DB_SERVER . "). " .
                   "<br />" .
                   "Check username and password in constants.php.");
-/*
+
     // select database
     if (@mysql_select_db(DB_NAME, $connection) === FALSE)
         apologize("Could not select database (" . DB_NAME . ").");
-*/
-?>
 
+?>
