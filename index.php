@@ -61,28 +61,29 @@
 			  <tr>
 		  		<td valign="top" id="rightcolumn" width="200px">
 						  <b><font size="4">Never Have I ever...</font></b></br>
-	            <form>
-			  		  <textarea id="messagearea"></textarea><br />
-		  				<table cellpadding="5px">
-	  					  <tr>
-  							  <td valign="top" width ="68px">
-							  	  Gender: <br/>
-      	              <input type="radio" name="sex" value="male" /> Male <br/>
-	                    <input type="radio" name="sex" value="female" /> Female <br/>
-				    		    </td>
-				  					<td valign="top" width="92px">
-				  					  Class: <br/>										  
-			  							<input type="radio" name="class" value="male" /> Freshman <br/>
-		  								<input type="radio" name="class" value="male" /> Sophomore <br/>
-	  									<input type="radio" name="class" value="male" /> Junior <br/>
-  										<input type="radio" name="class" value="male" /> Senior <br/>
-								  	</td>
-							    </tr>
-						  		<tr>
-					   			  <td colspan="2" align="center"><input id="newpostbutton" type="submit" name="newpost" value="Submit"><br/><br/><br/><br/></td>
-					 				</tr>
-				 				</table>
-	             </form>
+							<form action="submit2" method="post">
+						  		  <textarea name="message" id="messagearea"></textarea><br />
+					  				<table cellpadding="5px">
+									  <tr>
+										  <td valign="top" width ="68px">
+										  	  Gender: <br/>
+								  <input type="radio" name="sex" value="M" /> Male <br/>
+									<input type="radio" name="sex" value="F" /> Female <br/>
+											</td>
+							  					<td valign="top" width="92px">
+							  					  Class: <br/>										  
+						  							<input type="radio" name="class" value="freshman" /> Freshman <br/>
+					  								<input type="radio" name="class" value="sophomore" /> Sophomore <br/>
+													<input type="radio" name="class" value="junior" /> Junior <br/>
+													<input type="radio" name="class" value="senior" /> Senior <br/>
+											  	</td>
+											</tr>
+									  		<tr>
+								   			  <td colspan="2" align="center"><input id="newpostbutton" type="submit" name="newpost" value="Submit"><br/><br/><br/><br/></td>
+								 				</tr>
+							 				</table>
+							 </form>
+
 		  				</td>
 						</tr>
 					</tr>

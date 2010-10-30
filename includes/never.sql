@@ -22,5 +22,32 @@ ALTER TABLE `users` ADD `admin` BOOL NOT NULL DEFAULT '0'
 
 --
 -- Set a user as admin
+-- MAKE THIS AN ADMIN PRIVILEGE
 --
 UPDATE `neverhav_??`.`users` SET `admin` = '1' WHERE `users`.`uid` = ??;
+
+--
+-- Table structure for table `posts`
+--
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `neverhav_test`.`posts` (
+`message` TEXT NOT NULL ,
+`sex` ENUM( 'M', 'F' ) NOT NULL ,
+`class` VARCHAR( 255 ) NOT NULL ,
+`time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`yes` INT NOT NULL DEFAULT '0',
+`no` INT NOT NULL DEFAULT '0',
+`message_id` INT NOT NULL ,
+PRIMARY KEY ( `message_id` )
+) ENGINE = MYISAM ;
+
+--
+-- Correctly set message_id as auto-incrementing unique primary key
+--
+ALTER TABLE `posts` ADD UNIQUE (
+`message_id`
+)
+
+ALTER TABLE `posts` CHANGE `message_id` `message_id` INT( 11 ) NOT NULL AUTO_INCREMENT 
+
+ALTER TABLE `posts` DROP INDEX `message_id_2` 
