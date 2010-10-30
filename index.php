@@ -1,3 +1,8 @@
+<?
+	require_once("includes/common.php");
+	require_once("includes/get_post.php");
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -15,6 +20,9 @@
 		<table>
 			<tr>
 				<td colspan="6" height = "10"></td>
+			</tr>
+			<tr>
+				<td><? get_post(0, $mysqli); ?></td>
 			</tr>
 			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
