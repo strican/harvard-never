@@ -51,3 +51,35 @@ ALTER TABLE `posts` ADD UNIQUE (
 ALTER TABLE `posts` CHANGE `message_id` `message_id` INT( 11 ) NOT NULL AUTO_INCREMENT 
 
 ALTER TABLE `posts` DROP INDEX `message_id_2` 
+
+--
+-- Table structure for table `moderator`
+--
+DROP TABLE IF EXISTS `moderator`;
+CREATE TABLE `neverhav_test`.`moderator` (
+`message` TEXT NOT NULL ,
+`sex` ENUM( 'M', 'F' ) NOT NULL ,
+`class` VARCHAR( 255 ) NOT NULL ,
+`time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`message_id` INT NOT NULL ,
+PRIMARY KEY ( `message_id` )
+) ENGINE = MYISAM ;
+
+--
+-- Correctly set message_id as auto-incrementing unique primary key
+--
+ALTER TABLE `moderator` ADD UNIQUE (
+`message_id`
+);
+
+ALTER TABLE `moderator` CHANGE `message_id` `message_id` INT( 11 ) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `moderator` DROP INDEX `message_id_2` ;
+
+
+--
+-- Add moderator column to posts table
+--
+ALTER TABLE `posts` ADD `moderator` VARCHAR( 255 ) NOT NULL
+
+

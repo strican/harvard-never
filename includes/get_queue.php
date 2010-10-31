@@ -15,7 +15,7 @@
 	    $id = mysql_real_escape_string($id);
 
 		// prepare SQL
-		$sql = "SELECT message, sex, class, time, yes, no FROM posts WHERE message_id=?";
+		$sql = "SELECT message, sex, class, time FROM moderator WHERE message_id=?";
 
 		$stmt = mysqli_stmt_init($mysqli);
 		$stmt->prepare($sql);
@@ -36,8 +36,8 @@
 								<br/><br/>
 								<? echo $message ?> <br/><br/>
 								<form>
-									<input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
-									<input class="responsebutton" type="submit" value="I have!" />
+									<input class="responsebutton" type="submit" value="Approve" />&nbsp;&nbsp;&nbsp;
+									<input class="responsebutton" type="submit" value="Reject" />
 							  	</form>
 							<td/>
 							<td class="posthorzpadding"></td>

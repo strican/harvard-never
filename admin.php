@@ -34,7 +34,7 @@
 		include("includes/header.php");
 	?>
 
-	<p>Welcome to admin interface</p>
+	<a href="moderate.php">Moderate posts</a>
 
 	<?
 		include("includes/footer.php");

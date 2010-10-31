@@ -19,7 +19,7 @@
         apologize("Please provide your class information.");
     
     // prepare SQL
-    $sql = "INSERT INTO posts (message, sex, class) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO moderator (message, sex, class) VALUES (?, ?, ?)";
     $stmt = mysqli_stmt_init($mysqli);
     $stmt->prepare($sql);
     $stmt->bind_param("sss", $message, $sex, $class);
