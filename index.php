@@ -22,39 +22,11 @@
 				<td colspan="6" height = "10"></td>
 			</tr>
 			<tr>
-				<td><? get_post(0, $mysqli); ?></td>
-			</tr>
-			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
 					<table width="700px" cellpadding="20px">
-						<tr>
-							<td class="posthorzpadding"></td>
-							<td  class="postdisplay">
-								<font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font>
-								<br/><br/>
-								Never have I ever... slept with Brian Plancher. <br/><br/>
-								<form>
-									<input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
-									<input class="responsebutton" type="submit" value="I have!" />
-							  	</form>
-							<td/>
-							<td class="posthorzpadding"></td>
-						</tr>
-						<tr>
-							<td height="0" colspan="3"></td>
-						</tr>
-						<tr>
-							<td class="posthorzpadding"></td>
-							<td  class="postdisplay">
-								<font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font><br/><br/>
-											   Never have I ever... slept with Brian Plancher. <br/><br/>
-								<form>
-								    <input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
-								  	<input class="responsebutton" type="submit" value="I have!" />
-							  	</form>
-							</td>
-							<td class="posthorzpadding"></td>
-						</tr>
+					<? 
+						display_posts();
+					?>
 					</table>
 				</td>
 						
