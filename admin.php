@@ -3,17 +3,9 @@
     // require common code
     require_once("includes/common.php");
 	require_once("includes/admin_tools.php");
+	
 
-    // require authentication for admin page
-	if(preg_match("/admin.php$/", $_SERVER["PHP_SELF"]))
-	{
-        if (!isset($_SESSION["uid"]))
-            redirect("login.php");
-
-		if (!isadmin($_SESSION["uid"], $mysqli))
-			apologize("You are not authorized to have access.");
-
-	}
+	authenticate();
 
 ?>
 

@@ -1,7 +1,6 @@
 --
 -- Table structure for table `users`
 --
-
 DROP TABLE IF EXISTS `users`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
@@ -83,3 +82,31 @@ ALTER TABLE `moderator` DROP INDEX `message_id_2` ;
 ALTER TABLE `posts` ADD `moderator` VARCHAR( 255 ) NOT NULL
 
 
+
+--
+-- Create archive table
+--
+CREATE TABLE IF NOT EXISTS `archive` (
+  `message` text NOT NULL,
+  `sex` enum('M','F') NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `admin_id` int(11) NOT NULL,
+  `action` enum('Pass', 'Approve', 'Reject') NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 
+
+
+--
+-- Remove Auto Increment
+--
+
+ALTER TABLE `archive` CHANGE `id` `id` INT( 11 ) NOT NULL 
+
+--
+-- Fix Primary Key
+--
+ALTER TABLE archive DROP PRIMARY KEY;
+ALTER TABLE archive ADD PRIMARY KEY (time, id)
