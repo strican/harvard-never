@@ -1,3 +1,8 @@
+<?
+	require_once("includes/common.php");
+	require_once("includes/get_post.php");
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -19,34 +24,9 @@
 			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
 					<table width="700px" cellpadding="20px">
-						<tr>
-							<td class="posthorzpadding"></td>
-							<td  class="postdisplay">
-								<font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font>
-								<br/><br/>
-								Never have I ever... slept with Brian Plancher. <br/><br/>
-								<form>
-									<input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
-									<input class="responsebutton" type="submit" value="I have!" />
-							  	</form>
-							<td/>
-							<td class="posthorzpadding"></td>
-						</tr>
-						<tr>
-							<td height="0" colspan="3"></td>
-						</tr>
-						<tr>
-							<td class="posthorzpadding"></td>
-							<td  class="postdisplay">
-								<font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font><br/><br/>
-											   Never have I ever... slept with Brian Plancher. <br/><br/>
-								<form>
-								    <input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
-								  	<input class="responsebutton" type="submit" value="I have!" />
-							  	</form>
-							</td>
-							<td class="posthorzpadding"></td>
-						</tr>
+					<? 
+						display_posts();
+					?>
 					</table>
 				</td>
 						

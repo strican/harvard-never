@@ -22,5 +22,8 @@
     // hostname of course's database server
     define("DB_SERVER", "66.147.244.194");
 
+	// number of hits per page
+	define("RESULTS_PER_PAGE", 10);
+
 
 ?>

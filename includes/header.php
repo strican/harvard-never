@@ -11,7 +11,7 @@
 			<tr height="20">
 			</tr>
 			<tr>
-	        	<td colspan="6" id="heading" height="85" align="left"><img src="images/title.PNG" /></td>
+	        	<td colspan="6" id="heading" height="85" align="left"><img src="~/public_html/images/title.PNG" /></td>
           	</tr>
 			<tr>
 				<td colspan="6" id="subheading" align="center">What you haven't done...someone else has.</td>
