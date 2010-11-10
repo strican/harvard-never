@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Never Have I Ever Harvard.</title>
+    <link rel="stylesheet" type="text/css" href="webstyle.css"/>
+    <link rel="shortcut icon" href="/images/never-icon.gif" type="image/x-icon" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19474758-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+    <script type="text/javascript">
+    <!--
+var gender;
+var year;
+
+function initialize()
+{
+  hideAllInfo();
+  checkCookie();
+}
+
+      function hideAllInfo()
+      {
+        hide('info1');
+      }
+      function hide(s)
+      {
+        document.getElementById(s).style.visibility = "hidden";
+      }
+      function show(s)
+      {
+        document.getElementById(s).style.visibility = "visible";
+      }
+
+function hideDemographics()
+{
+  var index1 = document.getElementById("demographics_form").rowIndex;
+  document.getElementById("main_table").deleteRow(index1);
+  var index2 = document.getElementById("demographics_bottom").rowIndex;
+  document.getElementById("main_table").deleteRow(index2);
+}
+
+function submitInfo()
+{
+  if(document.getElementById("dem_male").checked==true)
+    gender = "male";
+  else if(document.getElementById("dem_female").checked==true)
+    gender = "female";
+  else
+  {
+    alert("Please select your gender.");
+    break;
+  }
+
+  if(document.getElementById("dem_freshman").checked==true)
+    year =  2014;
+  else if(document.getElementById("dem_sophomore").checked==true)
+    year =  2013;
+  else if(document.getElementById("dem_junior").checked==true)
+    year =  2012;
+  else if(document.getElementById("dem_freshman").checked==true)
+    year = 2011;
+  else
+  {
+    alert("Please select your class year.");
+    break;
+  }
+
+  setCookie("gender",gender,7);
+  setCookie("year",year,7);
+  hideDemographics();
+}
+
+//Cookie handling code
+//Adapted from w3schools
+function getCookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=");
+  if (c_start!=-1)
+    {
+    c_start=c_start + c_name.length+1;
+    c_end=document.cookie.indexOf(";",c_start);
+    if (c_end==-1) c_end=document.cookie.length;
+    return unescape(document.cookie.substring(c_start,c_end));
+    }
+  }
+return "";
+}
+
+function setCookie(c_name,value,expiredays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate()+expiredays);
+document.cookie=c_name+ "=" +escape(value)+
+((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
+}
+
+function checkCookie()
+{
+gender=getCookie('gender');
+year = getCookie('year');
+if (gender!=null && year!=null)
+  hideDemographics();
+}
+    -->
+    </script>
+  </head>
+  <body onload="initialize();">
+    <center>
+      <div>
+	<table id="main_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">
+	  <tr id="toplinks" align="center">
+	    <td width = "150px"><a href="index.html">HOME</a></td>
+	    <td width = "230px"><a href="popular.html">MOST POPULAR</a></td>
+            <td width = "160px"><a href="submit.html">SUBMIT<a/></td>
+	    <td width = "200px"><a href="contact.html">CONTACT US</a></td>
+	    <td width = "160px"><a href="contact.html">LOGIN</a></td>
+          </tr>
+	  <tr height="20">
+	  </tr>
+	  <tr>
+	    <td colspan="7" id="heading" height="85" align="left"><img src="images/title.png" /></td>
+          </tr>
+	  <tr>
+	    <td colspan="7" id="subheading" align="center">What you haven't done...someone else has.</td>
+	  </tr>
+	  <tr>
+	    <td colspan="7" height="3px"><hr class="dividingline" /></td>
+	  </tr>
+          
+          <tr id="demographics_form">
+            <td colspan="7">
+              <table cellpadding="5px">
+	        <tr>
+                  <td valign="center" width="300px">
+                    <font style="font-size: 1.8em">Please tell us a bit about yourself!</font>
+                    <br/>
+                    <font style="font-size: .7em">This is simply for data recording purposes and is entirely anonymous.</font>
+                  </td>
+  		  <td valign="center" width ="120px">
+		    Gender: <br/>
+      	            <input type="radio" name="sex" value="male" id="dem_male"/> Male <br/>
+	            <input type="radio" name="sex" value="female" id="dem_female" /> Female
+		  </td>
+		  <td valign="center" width="280px">
+		    Class: <br/>										  
+	            <input type="radio" name="class" value="male" id="dem_freshman"/> Freshman &nbsp;&nbsp;
+		    <input type="radio" name="class" value="male" id="dem_sophomore"/> Sophomore <br/>
+	  	    <input type="radio" name="class" value="male" id="dem_junior"/> Junior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  		    <input type="radio" name="class" value="male" id="dem_senior"/> Senior
+		  </td>
+	          <td colspan="2" valign ="center" align="center" width="200px"><input id="demographicsbutton" type="submit" name="demographics" value="Submit" onclick="submitInfo()">
+	          </td>
+                </tr>
+	      </table>
+            </td>
+          </tr>
+
+          <tr id="demographics_bottom">
+	    <td colspan="7" height="3px"><hr class="dividingline" /></td>
+	  </tr>
+
+
+	  <tr>
+	    <td valign="top" colspan="4" rowspan="2" width="700px" border="0" cellpadding="0" cellspacing="0" spacing="0" padding="0">
+	      <table width="700px" cellspacing="0px" cellpadding="0px">
+                
+
+
+
+                <tr><td height = "20px" colspan ="3"></td></tr>
+
+
+		<tr>
+		  <td class="posthorzpadding">
+                  </td>
+		  <td  class="postdisplay">
+		    <font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font><br/><br/>
+                      Never have I ever... slept with Brian Plancher. <br/><br/>
+
+		      <input class="responsebutton" onclick="show('info1');" 
+                             type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
+		      <input class="responsebutton" onclick="document.getElementById('info1').style.visibility = 'visible';" type="submit" value="I have!" />
+
+		  <td/>
+	          <td id="info1" class = "percentdisplay" align="left" spacing="0px" cellspacing="0px" padding="0px" cellpadding="0px">
+		    <img src="http://chart.apis.google.com/chart?chxl=1:|Have|Have+Not&chxs=0,676767,11.4,0,l,676767&chxt=y,x&chbh=30,0,10&chs=160x120&cht=bvg&chco=3366CC&chd=s:Sr&chp=0" width="160" height="120" alt="" /><br/>
+                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <a href="index.html" style="color: #0000FF; text-decoration:underline; font-size: .6em;">view more...</a>
+		  </td>
+		</tr>
+	        <tr><td height="40" colspan="3"></td>
+                </tr>
+		
+
+
+
+
+                <tr>
+                  <td class="posthorzpadding">
+                  </td>
+		  <td  class="postdisplay">
+		    <font size="1">Posted October 23, 2010 at 4:27pm by a junior male.</font><br/><br/>
+		      Never have I ever... slept with Brian Plancher. <br/><br/>
+		    <form>
+		      <input class="responsebutton" type="submit" value="Me neither..." />&nbsp;&nbsp;&nbsp;
+		      <input class="responsebutton" type="submit" value="I have!" />
+	            </form>
+		  </td>
+		  <td class="posthorzpadding">
+                  </td>
+                </tr>
+		<tr><td height="40" colspan="3"></td>
+                </tr>
+	      </table>
+            </td>
+            <td id="welcomemessage">
+              <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
+              Welcome to Never Have I Ever - Harvard edition.<br/><br/>
+
+              You know the game, now play it with the whole school! Find out how many of your peers have done the crazy things you haven't!<br/><br/>
+              Click <a href="submit.html" style="color: #0000FF; text-decoration:underline">here<a/> to submit a post.</br>
+              Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
+            </td>
+	  <tr>
+	    <td valign="top" id="rightcolumn" width="200px">
+	      
+            </td>
+          </tr>
+	  <tr id="footer">
+	    <td colspan="5"><br/><br/><hr class="dividingline"/>            
+	      Produced by Peter Knudson. Developed by Devon Long, and Steven Tricanowicz.<br/><br/><br/>
+            </td>
+	  </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
