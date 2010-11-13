@@ -31,12 +31,6 @@
     
     if ($success)
     {
-        // grab uid
-        $uid = $stmt->insert_id;
-        
-        // cache uid in session
-        $_SESSION["uid"] = $uid;
-
         // redirect to confirmation page
         redirect("success.php");
     }

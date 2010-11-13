@@ -50,17 +50,27 @@
 
 	    // escape username and password for safety
 	    $id = mysql_real_escape_string($id);
+		$uid = mysql_real_escape_string($_SESSION["uid"]);
 
 		// prepare SQL
-		$sql = "SELECT message, sex, class, time FROM moderator WHERE message_id=?";
+		$sql = "SELECT * FROM (SELECT full.message, full.sex, full.class, full.time, full.orig FROM 
+				(SELECT message, sex, class, moderator.time, moderator.message_id AS orig, passes.id 
+				FROM moderator LEFT OUTER JOIN (SELECT id, time FROM archive WHERE admin_id=? AND 
+				action='Pass') AS passes ON moderator.message_id=passes.id AND moderator.time=passes.time) 
+				AS full WHERE full.id IS NULL) AS results WHERE results.orig=?;";
+
+//SELECT full.message, full.sex, full.class, full.time FROM (SELECT message, sex, class, moderator.time, 
+//				passes.id FROM moderator LEFT OUTER JOIN (SELECT id, time FROM archive WHERE admin_id=? AND action='Pass') 
+//				AS passes ON moderator.message_id=passes.id AND moderator.time=passes.time) AS full WHERE full.id IS NULL";
+//		$sql = "SELECT message, sex, class, time FROM moderator WHERE message_id=?";
 
 		$stmt = mysqli_stmt_init($mysqli);
 		$stmt->prepare($sql);
-		$stmt->bind_param("i", $id);
+		$stmt->bind_param("ii", $uid, $id);
 
 		// execute query
 		$stmt->execute();
-		$stmt->bind_result($message, $sex, $class, $time);
+		$stmt->bind_result($message, $sex, $class, $time, $orig);
 		
 		// if we found a row, remember id and display
 		static $i = 0;
@@ -364,6 +374,7 @@
 
 
 		$uid = mysql_real_escape_string($_SESSION["uid"]);
+
 		$action = "Pass";
 
 		// prepare SQL
