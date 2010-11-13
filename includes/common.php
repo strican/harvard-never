@@ -45,8 +45,4 @@
     if (@mysql_select_db(DB_NAME, $connection) === FALSE)
         apologize("Could not select database (" . DB_NAME . ").");
 	
-	
-	$max = 0;
-	$last = 0;
-
 ?>

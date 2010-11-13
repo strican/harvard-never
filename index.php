@@ -8,6 +8,15 @@
   <head>
     <title>Never Have I Ever Harvard.</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="script/utilities.js"></script>
+
+	<? 
+		generate_posts();
+		generate_script();
+	?>
+
   </head>
   <body>
 
@@ -24,7 +33,7 @@
 			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
 					<table width="700px" cellpadding="20px">
-					<? 
+					<?
 						display_posts();
 					?>
 					</table>

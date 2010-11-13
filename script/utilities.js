@@ -9,3 +9,12 @@ function moderator_lock(id)
 	document.getElementById(p_name).disabled = "disabled";
 	
 }
+
+function vote_lock(id)
+{
+	var y_name = id + "y";
+	var n_name = id + "n";
+
+	document.getElementById(y_name).disabled = "disabled";
+	document.getElementById(n_name).disabled = "disabled";
+}
