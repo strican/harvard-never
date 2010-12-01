@@ -15,7 +15,7 @@
 	 */
 	function check_post($id)
 	{
-		global $mysqli, $ids;
+		global $mysqli, $ids, $count, $used;
 
 	    // escape username and password for safety
 	    $id = mysql_real_escape_string($id);
@@ -32,11 +32,12 @@
 		$stmt->bind_result($message, $sex, $class, $time, $yes, $no);
 		
 		// if we found a row, remember id and display
-		static $i = 0;
+//		static $i = 0;
 		while ($stmt->fetch())
 		{
-			$ids[$i] = $id;
-			$i++;
+			$ids[$count] = $id;
+			$used++;
+//			$i++;
 
 			return true;
 		}
@@ -93,7 +94,7 @@
 							<td class="posthorzpadding"></td>
 						</tr>
 						<tr>
-							<td height="0" colspan="3"></td>
+							<td height="60px" colspan="3"></td>
 						</tr>
 <?
 			return true;
@@ -247,9 +248,90 @@
 	function find_page($pg)
 	{
 		global $page;
+//		dump($page);
 
-		for (; $i < $pg; $page++)
+		for (; $page < $pg; $page++)
 			generate_posts();
+		
+//		dump($page);
+		generate_script();
 	}
+
+	function get_total()
+	{
+		global $page, $total, $mysqli, $used;
+
+		// prepare SQL
+		$sql = "SELECT count(message_id) FROM posts";
+
+		$stmt = mysqli_stmt_init($mysqli);
+		$stmt->prepare($sql);
+//		$stmt->bind_param("i", $id);
+
+		// execute query
+		$stmt->execute();
+		$stmt->bind_result($total);
+
+		if ($stmt->fetch())
+			return;
+
+	
+		apologize("There was an error. Please try again in a few minutes.");	
+
+	}
+
+	function page_choice()
+	{
+		global $page, $total, $used;
+
+		get_total();
+
+		$list_first;
+		$list_last;
+		
+		if ($page < 3)
+			$list_first = 1;
+		else
+			$list_first = $page - 2;
+
+		$left = intval((floatval($total - $used) / RESULTS_PER_PAGE) + 1);
+		
+		if ($left > 2)
+			$list_last = $page + 2;
+		else
+			$list_last = $page + $left;
+
+?>
+			<tr>
+				<td><a href="index.php?pg=1">First</a></td>;
+
+<?
+		for ($i = $list_first; $i <= $list_last; $i++)
+		{
+?>
+				<td><a href="index.php?pg=<? echo $i ?>"><? echo $i ?></a></td>
+<?
+		}
+?>
+				<td><a href="index.php?pg=<? echo ($page + $left) ?>">Last</a></td>
+			</tr>
+<?
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

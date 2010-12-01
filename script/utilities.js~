@@ -162,7 +162,6 @@ function hideAllInfo()
 {
   hide('info1');
 }
-<<<<<<< HEAD:script/utilities.js
 
 
 /***************************************************************
@@ -189,10 +188,10 @@ function page(pg)
 		{
 			document.getElementById("main_posts").innerHTML = xmlhttp.responseText;
 		}
+
+		
 	}
 
 	xmlhttp.open("GET", "page.php?pg=" + pg);
 	xmlhttp.send();
 }
-=======
->>>>>>> 640dffbd7a6b29bbf070ce653e1970a39036e98f:script/utilities.js

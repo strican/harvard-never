@@ -171,6 +171,7 @@ function hideAllInfo()
 /***************************************************************
  * Next page AJAX functions
  ***************************************************************/
+/*
 function page(pg)
 {
 	if (window.XMLHttpRequest)
@@ -188,8 +189,11 @@ function page(pg)
 		{
 			document.getElementById("main_posts").innerHTML = xmlhttp.responseText;
 		}
+
+		
 	}
 
 	xmlhttp.open("GET", "page.php?pg=" + pg);
 	xmlhttp.send();
 }
+*/

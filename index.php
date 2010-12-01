@@ -14,8 +14,14 @@
 	<script type="text/javascript" src="script/utilities.js"></script>
 
 	<? 
-		generate_posts();
-		generate_script();
+		$pg = $_GET["pg"];
+		if ($pg == NULL)
+			$pg = 1;
+		
+//		dump($pg);
+		find_page($pg);
+//		generate_posts();
+//		generate_script();
 	?>
 
 	<script type="text/javascript">
@@ -83,6 +89,7 @@
 	      <table width="700px" cellspacing="0px" cellpadding="0px">
                 <tr><td height = "20px" colspan ="3"></td></tr>
 
+
 		</table>
 	</div>
 <center>
@@ -112,6 +119,9 @@
                                 Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
             </td>
 	  </tr>
+
+
+			<? page_choice() ?>
 <?
 	include("includes/footer.php");
 ?>
