@@ -99,7 +99,7 @@
 			</tr>
 			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
-					<table width="700px" cellpadding="20px">
+					<table id="main_posts" width="700px" cellpadding="20px">
 					<?
 						display_posts();
 					?>

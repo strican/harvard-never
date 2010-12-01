@@ -244,4 +244,12 @@
 
 	}
 
+	function find_page($pg)
+	{
+		global $page;
+
+		for (; $i < $pg; $page++)
+			generate_posts();
+	}
+
 ?>
