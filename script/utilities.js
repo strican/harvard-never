@@ -133,6 +133,10 @@ function submitInfo()
   hideDemographics();
 }
 
+//RESPONSE BUTTON FUNCTIONS
+
+
+
 
 //MISCELLANEOUS FUNCTIONS
 
