@@ -93,7 +93,7 @@
 							<td class="posthorzpadding"></td>
 						</tr>
 						<tr>
-							<td height="0" colspan="3"></td>
+							<td height="60px" colspan="3"></td>
 						</tr>
 <?
 			return true;

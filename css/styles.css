@@ -50,6 +50,7 @@ div
 }
 #welcomemessage
 {
+  valign: top;
   padding: 10px;
 }
 .toplink

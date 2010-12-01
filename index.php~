@@ -43,8 +43,8 @@
 	?>
 
      <center>
-		<div>
-			<table id="main_table">     
+       <div>
+	<table id="main_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">     
           <tr id="demographics_form">
             <td colspan="7">
               <table cellpadding="5px">
@@ -81,10 +81,6 @@
 	  <tr>
 	    <td valign="top" colspan="4" rowspan="2" width="700px" border="0" cellpadding="0" cellspacing="0" spacing="0" padding="0">
 	      <table width="700px" cellspacing="0px" cellpadding="0px">
-                
-
-
-
                 <tr><td height = "20px" colspan ="3"></td></tr>
 
 		</table>
@@ -99,57 +95,31 @@
 			</tr>
 			<tr>
 				<td valign="top" colspan="4" rowspan="2" width="700px">
-					<table width="700px" cellpadding="20px">
+					<table id="main_posts" width="700px" cellpadding="20px">
+
 					<?
 						display_posts();
 					?>
-					</table>
-				</td>
+	      </table>
+	    </td>
 						
-			    <td id="welcomemessage">
-						
-							  Welcome to Never Have I Ever - Harvard edition.<br/><br/>
+	    <td id="welcomemessage" valign="top">
+              <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
+                                Welcome to Never Have I Ever - Harvard edition.<br/><br/>
 
-                You know the game, now play it with the whole school! Find out how many of your peers have done the crazy things you haven't!
-                follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
-							
-				  	</td>
-			  <tr>
-		  		<td valign="top" id="rightcolumn" width="200px">
-						  <b><font size="4">Never Have I ever...</font></b></br>
-							<form action="submit2" method="post">
-						  		  <textarea name="message" id="messagearea"></textarea><br />
-					  				<table cellpadding="5px">
-									  <tr>
-										  <td valign="top" width ="68px">
-										  	  Gender: <br/>
-								  <input type="radio" name="sex" value="M" /> Male <br/>
-									<input type="radio" name="sex" value="F" /> Female <br/>
-											</td>
-							  					<td valign="top" width="92px">
-							  					  Class: <br/>										  
-						  							<input type="radio" name="class" value="freshman" /> Freshman <br/>
-					  								<input type="radio" name="class" value="sophomore" /> Sophomore <br/>
-													<input type="radio" name="class" value="junior" /> Junior <br/>
-													<input type="radio" name="class" value="senior" /> Senior <br/>
-											  	</td>
-											</tr>
-									  		<tr>
-								   			  <td colspan="2" align="center"><input id="newpostbutton" type="submit" name="newpost" value="Submit"><br/><br/><br/><br/></td>
-								 				</tr>
-							 				</table>
-							 </form>
-
-		  				</td>
-						</tr>
-					</tr>
+                                You know the game, now play it with the whole school! Find out how many of your peers have done the crazy things you haven't!<br/><br/>
+                                Click <a href="submit.html" style="color: #0000FF; text-decoration:underline">here<a/> to submit a post.</br>
+                                Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
+            </td>
+	  </tr>
+<?
+	include("includes/footer.php");
+?>
 </table>
 </div>
 </center>
 
-<?
-	include("includes/footer.php");
-?>
 
-	</body>
+
+</body>
 </html>

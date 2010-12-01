@@ -19,32 +19,76 @@ function vote_lock(id)
 	document.getElementById(n_name).disabled = "disabled";
 }
 
+//GLOBAL VARIABLES
 
-/*
- * Code from index.php
- * 
- * Utilities for keeping cookies
- */
 var gender;
 var year;
      
+/*
+ *void
+ *initialize()
+ *
+ *runs when index.php has loaded
+ *loads gender and year cookies if they exist, if not displays the demographics form
+ */
 function initialize()
 {
-  hideAllInfo();
   checkCookie();
 }
-function hideAllInfo()
+
+/*
+ * Utilities for keeping cookies
+ * Adapted from w3schools
+ */
+function getCookie(c_name)
 {
-  hide('info1');
+  if (document.cookie.length>0)
+  {
+    c_start=document.cookie.indexOf(c_name + "=");
+    if (c_start!=-1)
+    {
+      c_start=c_start + c_name.length+1;
+      c_end=document.cookie.indexOf(";",c_start);
+      if (c_end==-1) c_end=document.cookie.length;
+      return unescape(document.cookie.substring(c_start,c_end));
+    }
+  }
+  return "";
 }
-function hide(s)
+
+function setCookie(c_name,value,expiredays)
 {
-  document.getElementById(s).style.visibility = "hidden";
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate()+expiredays);
+  document.cookie=c_name+ "=" +escape(value)+
+  ((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
 }
-function show(s)
+
+/*
+ * void
+ * checkCookie()
+ *
+ * checks if cookies exist for gender and year
+ * if not displays the demographics form
+ */
+function checkCookie()
 {
-  document.getElementById(s).style.visibility = "visible";
+  gender = getCookie('gender');
+  year = getCookie('year');
+  if(gender!="" && gender!=null && year!="" && year!=null)
+  {
+    hideDemographics();
+  }
 }
+
+//DEMOGRAPHICS FORM FUNCTIONS
+
+/*
+ *void
+ *hideDemographics()
+ *
+ *hides the demographics form
+ */
 function hideDemographics()
 {
   var index1 = document.getElementById("demographics_form").rowIndex;
@@ -53,6 +97,13 @@ function hideDemographics()
   document.getElementById("main_table").deleteRow(index2);
 }
 
+/*
+ * void
+ * submitInfo()
+ *
+ * sets values for globals year and gender
+ * saves the values in cookies
+ */
 function submitInfo()
 {
   if(document.getElementById("dem_male").checked==true)
@@ -82,40 +133,34 @@ function submitInfo()
   hideDemographics();
 }
 
-//Cookie handling code
-//Adapted from w3schools
-function getCookie(c_name)
+
+//MISCELLANEOUS FUNCTIONS
+
+/*
+ *void
+ *hide(s)
+ *
+ *hides the element whose id element value is the argument
+ */
+function hide(s)
 {
-  if (document.cookie.length>0)
-  {
-    c_start=document.cookie.indexOf(c_name + "=");
-    if (c_start!=-1)
-    {
-      c_start=c_start + c_name.length+1;
-      c_end=document.cookie.indexOf(";",c_start);
-      if (c_end==-1) c_end=document.cookie.length;
-      return unescape(document.cookie.substring(c_start,c_end));
-    }
-  }
-  return "";
+  document.getElementById(s).style.visibility = "hidden";
 }
 
-function setCookie(c_name,value,expiredays)
+/*
+ *void
+ *show(s)
+ *
+ *shows the element whose id element value is the argument
+ */
+function show(s)
 {
-  var exdate=new Date();
-  exdate.setDate(exdate.getDate()+expiredays);
-  document.cookie=c_name+ "=" +escape(value)+
-  ((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
+  document.getElementById(s).style.visibility = "visible";
 }
 
-function checkCookie()
+function hideAllInfo()
 {
-  gender = getCookie('gender');
-  year = getCookie('year');
-  if(gender!="" && gender!=null && year!="" && year!=null)
-  {
-    hideDemographics();
-  }
+  hide('info1');
 }
 
 
