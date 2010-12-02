@@ -47,11 +47,12 @@
 	<table id="main_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">     
           <tr>
 	    <td id="contact_area" valign="top" colspan="4" rowspan="2" width="700px">
-	      
-SPACE TO ADD CONTACT INFORMATION
-
-	    </td>
-						
+	    <h1>Questions? Comments? </h1>
+	    <h3>We'd love to hear them </h3>
+	    <p>Click <a href="mailto:admin@neverhaveiharvard.com?subject=re:Never Have I Harvard"> here </a> to email us. <br> <br>
+	    Follow us on <a href="http://twitter.com/#!/NeverHasHarvard"> Twitter! </a> <br> <br>
+	    Visit our Facebook page! </p>
+	    </td>				
 	    <td id="welcomemessage" valign="top">
               <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
                                 Welcome to Never Have I Ever - Harvard edition.<br/><br/>
