@@ -303,17 +303,17 @@
 
 ?>
 			<tr>
-				<td><a href="index.php?pg=1">First</a></td>;
+				<td><a href="index.php?pg=1" style="color: #0000FF; text-decoration:underline">First</a></td>
 
 <?
 		for ($i = $list_first; $i <= $list_last; $i++)
 		{
 ?>
-				<td><a href="index.php?pg=<? echo $i ?>"><? echo $i ?></a></td>
+				<td><a href="index.php?pg=<? echo $i ?>" style="color: #0000FF; text-decoration:underline"><? echo $i ?></a></td>
 <?
 		}
 ?>
-				<td><a href="index.php?pg=<? echo ($page + $left) ?>">Last</a></td>
+				<td><a href="index.php?pg=<? echo ($page + $left) ?>" style="color: #0000FF; text-decoration:underline">Last</a></td>
 			</tr>
 <?
 	}

@@ -89,24 +89,15 @@
 	      <table width="700px" cellspacing="0px" cellpadding="0px">
                 <tr><td height = "20px" colspan ="3"></td></tr>
 
-
-		</table>
-	</div>
-<center>
-
-<center>
-	<div>
-		<table>
 			<tr>
 				<td colspan="6" height = "10"></td>
 			</tr>
-			<tr>
-				<td valign="top" colspan="4" rowspan="2" width="700px">
-					<table id="main_posts" width="700px" cellpadding="20px">
+			                <? page_choice() ?>
 
 					<?
 						display_posts();
 					?>
+                                        <? page_choice() ?>
 	      </table>
 	    </td>
 						
@@ -121,7 +112,7 @@
 	  </tr>
 
 
-			<? page_choice() ?>
+			
 
 </table>
 </div>
