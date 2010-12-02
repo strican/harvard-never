@@ -1,8 +1,8 @@
 <center>
 	<div>
-		<table>
+		<table width="900px">
 	        <tr id="footer">
-				<td colspan="5">
+				<td>
 					<br/><br/><hr class="dividingline"/>
 					Produced by Peter Knudson. Developed by Devon Long, and Steven Tricanowicz.<br/><br/><br/>
 				</td>

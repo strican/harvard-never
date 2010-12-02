@@ -44,7 +44,7 @@
 
      <center>
        <div>
-	<table id="main_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">     
+	<table id="main_table">     
           <tr id="demographics_form">
             <td colspan="7">
               <table cellpadding="5px">
@@ -81,31 +81,44 @@
 	  <tr>
 	    <td valign="top" colspan="4" rowspan="2" width="700px" border="0" cellpadding="0" cellspacing="0" spacing="0" padding="0">
 	      <table width="700px" cellspacing="0px" cellpadding="0px">
+              
+
                 <tr><td height = "20px" colspan ="3"></td></tr>
-     
+              
+</table>
+	</div>
+<center>
+
+<center>
+	<div>
+		<table>
+			<tr>
+				<td colspan="6" height = "10"></td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="4" rowspan="2" width="700px">
+					<table width="700px" cellpadding="20px">
 					<?
 						display_posts();
 					?>
-	      </table>
-	    </td>
+					</table>
+				</td>
 						
-	    <td id="welcomemessage" valign="top">
-              <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
+			    <td id="welcomemessage" valign="top">
+                              <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
                                 Welcome to Never Have I Ever - Harvard edition.<br/><br/>
 
                                 You know the game, now play it with the whole school! Find out how many of your peers have done the crazy things you haven't!<br/><br/>
                                 Click <a href="submit.html" style="color: #0000FF; text-decoration:underline">here<a/> to submit a post.</br>
                                 Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
-            </td>
-	  </tr>
-</table>
-</div>
-</center>
-
+                            </td>
+		        </tr>
 <?
 	include("includes/footer.php");
 ?>
-
+</table>
+</div>
+</center>
 
 
 

@@ -2,11 +2,11 @@
 	<div>
 		<table id="header_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">
 			<tr id="toplinks" align="center">
-				<td width = "150px"><a href="index.html">HOME</a></td>
-				<td width = "230px"><a href="popular.html">MOST POPULAR</a></td>
-				<td width = "160px"><a href="submit.html">SUBMIT<a/></td>
-				<td width = "200px"><a href="contact.html">CONTACT US</a></td>
-				<td width = "160px"><a href="contact.html">LOGIN</a></td>
+				<td width = "150px"><a href="index.php">HOME</a></td>
+				<td width = "230px"><a href="popular.php">MOST POPULAR</a></td>
+				<td width = "160px"><a href="submit.php">SUBMIT<a/></td>
+				<td width = "200px"><a href="contact.php">CONTACT US</a></td>
+				<td width = "160px"><a href="contact.php">LOGIN</a></td>
 			</tr>
 			<tr height="20">
 			</tr>
