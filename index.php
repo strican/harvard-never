@@ -14,8 +14,14 @@
 	<script type="text/javascript" src="script/utilities.js"></script>
 
 	<? 
-		generate_posts();
-		generate_script();
+		$pg = $_GET["pg"];
+		if ($pg == NULL)
+			$pg = 1;
+		
+//		dump($pg);
+		find_page($pg);
+//		generate_posts();
+//		generate_script();
 	?>
 
 	<script type="text/javascript">
@@ -82,7 +88,22 @@
 	    <td valign="top" colspan="4" rowspan="2" width="700px" border="0" cellpadding="0" cellspacing="0" spacing="0" padding="0">
 	      <table width="700px" cellspacing="0px" cellpadding="0px">
                 <tr><td height = "20px" colspan ="3"></td></tr>
-     
+
+
+		</table>
+	</div>
+<center>
+
+<center>
+	<div>
+		<table>
+			<tr>
+				<td colspan="6" height = "10"></td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="4" rowspan="2" width="700px">
+					<table id="main_posts" width="700px" cellpadding="20px">
+
 					<?
 						display_posts();
 					?>
@@ -98,6 +119,10 @@
                                 Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
             </td>
 	  </tr>
+
+
+			<? page_choice() ?>
+
 </table>
 </div>
 </center>
