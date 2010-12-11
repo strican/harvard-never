@@ -284,34 +284,48 @@
 	{
 		global $page, $total, $used;
 
+		// Get the total number of posts
 		get_total();
 
-		$list_first;
-		$list_last;
+		$list_first;		// First page number in page menu
+		$list_last;			// Last page number in page menu
 		
+		// If within the first three, start at page 1
 		if ($page < 3)
 			$list_first = 1;
+
+		// Else, start from 2 before current
 		else
 			$list_first = $page - 2;
 
+		// Number of pages left
 		$left = intval((floatval($total - $used) / RESULTS_PER_PAGE) + 1);
 		
+
+		// If not within last three, end at two after current
 		if ($left > 2)
 			$list_last = $page + 2;
+
+		// If within the last three, end at last page #
 		else
 			$list_last = $page + $left;
 
+
+		// First option
 ?>
 			<tr>
 				<td><a href="index.php?pg=1">First</a></td>;
 
 <?
+		// Each page option in determined range
 		for ($i = $list_first; $i <= $list_last; $i++)
 		{
 ?>
 				<td><a href="index.php?pg=<? echo $i ?>"><? echo $i ?></a></td>
 <?
 		}
+
+		// Last option
 ?>
 				<td><a href="index.php?pg=<? echo ($page + $left) ?>">Last</a></td>
 			</tr>
