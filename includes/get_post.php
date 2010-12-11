@@ -248,25 +248,22 @@
 	function find_page($pg)
 	{
 		global $page;
-//		dump($page);
 
 		for (; $page < $pg; $page++)
 			generate_posts();
 		
-//		dump($page);
 		generate_script();
 	}
 
 	function get_total()
 	{
-		global $page, $total, $mysqli, $used;
+		global $total, $mysqli;
 
 		// prepare SQL
 		$sql = "SELECT count(message_id) FROM posts";
 
 		$stmt = mysqli_stmt_init($mysqli);
 		$stmt->prepare($sql);
-//		$stmt->bind_param("i", $id);
 
 		// execute query
 		$stmt->execute();
@@ -287,11 +284,11 @@
 		// Get the total number of posts
 		get_total();
 
-		$list_first;		// First page number in page menu
-		$list_last;			// Last page number in page menu
+		$list_first;			// First page number in page menu
+		$list_last;				// Last page number in page menu
 		
 		// If within the first three, start at page 1
-		if ($page < 3)
+		if ($page <= 3)
 			$list_first = 1;
 
 		// Else, start from 2 before current
@@ -300,7 +297,7 @@
 
 		// Number of pages left
 		$left = intval((floatval($total - $used) / RESULTS_PER_PAGE) + 1);
-		
+		$last = $page + $left;
 
 		// If not within last three, end at two after current
 		if ($left > 2)
@@ -308,8 +305,26 @@
 
 		// If within the last three, end at last page #
 		else
-			$list_last = $page + $left;
+			$list_last = $last;
 
+		// If range is is less than 5, add pages as appropriate
+		while ($last >= 4 && ($list_last - $list_first) < 4)
+		{
+			// If there is room for additional page options at front
+			if ($list_first != 1)
+			{
+				$list_first--;
+				continue;
+			}
+
+			if ($list_last != $last)
+			{
+				$list_last++;
+				continue;
+			}
+
+			break;
+		}
 
 		// First option
 ?>
@@ -331,20 +346,6 @@
 			</tr>
 <?
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -379,7 +379,7 @@
 
 		// prepare SQL
 		$sql = "INSERT INTO archive (message, sex, class, time, admin_id, action, id) VALUES (?, ?, ?, ?, ?, ?, ?)";
-		
+	 
 		$stmt = mysqli_stmt_init($mysqli);
 		$stmt->prepare($sql);
 		$stmt->bind_param("ssssisi", $message, $sex, $class, $time, $uid, $action, $id);
@@ -394,4 +394,40 @@
 	
 
 	}
+	
+	/*
+	 * Random string function
+	 * Taken from php.net
+	 */
+	function rand_str($length)
+	{
+    	$randstr = "";
+    	for($i=0; $i<$length; $i++)
+		{
+			$randnum = mt_rand(0, 61);
+			if($randnum < 10)
+			{
+				$randstr .= chr($randnum + 48);
+			}
+
+			else if($randnum < 36)
+			{
+				$randstr .= chr($randnum + 55);
+    		}
+			
+			else
+			{
+				$randstr .= chr($randnum + 61);
+			}
+		}
+
+		return $randstr;
+	}
+
+	// Set Admin
+	// TODO
+	
+
+	// Remove Admin
+	// TODO
 ?>

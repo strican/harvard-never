@@ -3,17 +3,9 @@
     // require common code
     require_once("includes/common.php");
 	require_once("includes/admin_tools.php");
+	
 
-    // require authentication for admin page
-	if(preg_match("/admin.php$/", $_SERVER["PHP_SELF"]))
-	{
-        if (!isset($_SESSION["uid"]))
-            redirect("login.php");
-
-		if (!isadmin($_SESSION["uid"], $mysqli))
-			apologize("You are not authorized to have access.");
-
-	}
+	authenticate();
 
 ?>
 
@@ -35,6 +27,17 @@
 	?>
 
 	<a href="moderate.php">Moderate posts</a>
+	
+	<br />
+	<br />
+
+	Populate a database:
+	<form id="populate" action="populate.php" method="post">
+		<input id="pop_posts" class="responsebutton" type="radio" name="db" value="posts" />Posts <br />
+		<input id="pop_moderate" class="responsebutton" type="radio" name="db" value="moderator" />Moderate <br />
+		<input type="submit" />
+	</form>
+
 
 	<?
 		include("includes/footer.php");

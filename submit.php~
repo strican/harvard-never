@@ -14,32 +14,6 @@
   <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <title>Never Have I Ever Harvard: Post a Submission</title>
-	
-	<script>
-	function post_to_url(path, params, method)
-	{
-		method = method || "post"; // Set method to post by default, if not specified.
-
-		// The rest of this code assumes you are not using a library.
-		// It can be made less wordy if you use one.
-		var form = document.createElement("form");
-		form.setAttribute("method", method);
-		form.setAttribute("action", path);
-
-		for(var key in params) {
-		    var hiddenField = document.createElement("input");
-		    hiddenField.setAttribute("type", "hidden");
-		    hiddenField.setAttribute("name", key);
-		    hiddenField.setAttribute("value", params[key]);
-
-		    form.appendChild(hiddenField);
-		}
-
-		document.body.appendChild(form);    // Not entirely sure if this is necessary
-		form.submit();
-	}
-
-	</script>
   </head>
 
   <body>
@@ -48,37 +22,75 @@
 	<?
 		include("includes/header.php");
 	?>
+     <center>
+       <div>
+	<table id="main_table" border="0" cellpadding="0" cellspacing="0" spacing="0" width="100%" bgcolor="#FFFFFF">     
+          <tr>
+	    <td id="contact_area" valign="top" align="center" colspan="4" rowspan="2" width="700px">
+	      
 
-    <div align="center">
-        <form action="submit2" method="post">
-	  		  <textarea name="message" id="messagearea"></textarea><br />
-  				<table cellpadding="5px">
-				  <tr>
-					  <td valign="top" width ="68px">
-					  	  Gender: <br/>
-              <input type="radio" name="sex" value="M" /> Male <br/>
-                <input type="radio" name="sex" value="F" /> Female <br/>
-		    		    </td>
-		  					<td valign="top" width="92px">
-		  					  Class: <br/>										  
-	  							<input type="radio" name="class" value="freshman" /> Freshman <br/>
-  								<input type="radio" name="class" value="sophomore" /> Sophomore <br/>
-								<input type="radio" name="class" value="junior" /> Junior <br/>
-								<input type="radio" name="class" value="senior" /> Senior <br/>
-						  	</td>
-					    </tr>
-				  		<tr>
-			   			  <td colspan="2" align="center"><input id="newpostbutton" type="submit" name="newpost" value="Submit"><br/><br/><br/><br/></td>
-			 				</tr>
-		 				</table>
-         </form>
+<br/><br/><br/><br/>
+<form action="submit2" method="post">
+  <table id="submit_form">
+    <tr>
+      <td colspan="3" align="left">
+        Peter fill in.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="left" id="submit_header">
+        &nbsp;NEVER HAVE I EVER...
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">
+        <textarea name="message" id="message_area"></textarea><br/><br/>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width ="110px">
+	Gender: <br/>
+        <input type="radio" name="sex" value="M" /> Male <br/>
+        <input type="radio" name="sex" value="F" /> Female <br/>
+      </td>
+      <td valign="top" width="130px">
+	Class: <br/>										  
+	<input type="radio" name="class" value="freshman" /> Freshman <br/>
+  	<input type="radio" name="class" value="sophomore" /> Sophomore <br/>
+      </td>
+      <td valign="top" width="100px">
+        <br/>
+	<input type="radio" name="class" value="junior" /> Junior <br/>
+	<input type="radio" name="class" value="senior" /> Senior <br/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center"><br/><input id="newpostbutton" type="submit" name="newpost" value="Submit"></td>
+    </tr>
+  </table>
+</form>
 
-    </div>
+
+	    </td>
+						
+	    <td id="welcomemessage" valign="top">
+              <form align="right"><input type="text" /><br/><input type="submit" value="Search Posts" /></form><br/><br/>
+                                Welcome to Never Have I Ever - Harvard edition.<br/><br/>
+
+                                You know the game, now play it with the whole school! Find out how many of your peers have done the crazy things you haven't!<br/><br/>
+                                Click <a href="submit.html" style="color: #0000FF; text-decoration:underline">here<a/> to submit a post.</br>
+                                Follow us on Twitter: HarvardHasNever<br/><br/><br/><br/>
+            </td>
+	  </tr>
+</table>
+</div>
+</center>
+ 
 
 	<?
 		include("includes/footer.php");
 	?>
 
   </body>
-
 </html>
+

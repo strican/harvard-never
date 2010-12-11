@@ -1,6 +1,8 @@
 <?
 	require_once("includes/common.php");
 	require_once("includes/admin_tools.php");
+
+	authenticate();
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
